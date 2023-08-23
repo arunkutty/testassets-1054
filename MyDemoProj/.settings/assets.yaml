@@ -30,8 +30,10 @@ User Group 1: Group Size 100.0 percent
         type: scheduleInvokedTest
   - name: myDataset.csv
     type: com.ibm.rational.test.lt.datapool
+    dependencies: 
+      - path: /MyDemoProj/myDataset.csv.metadata
+        type: datasetMetadata
   - name: myDataset.csv.metadata
-    missing: true
   - name: myTest.testsuite
     type: com.ibm.rational.test.lt.test
     version: 10.5.3.0
