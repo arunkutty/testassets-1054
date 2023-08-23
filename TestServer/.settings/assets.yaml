@@ -1,0 +1,327 @@
+name: TestServer
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /TestServer/lib/generate-stats-webserver-1.0.1-jar-with-dependencies.jar
+        type: javaClasspath
+      - path: /TestServer/src
+        type: javaClasspath
+  - name: ConstantSimulation.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE2053E3B18360D780B56236336636
+    dependencies: 
+      - path: /TestServer/TestServer(3).recsession
+        type: testRecsession
+  - name: DelaySimulation.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE0ADB192D51C2E632B93931363537
+    dependencies: 
+      - path: /TestServer/.classpath
+        type: testJavaClasspath
+      - path: /TestServer/TestServer(3).recsession
+        type: testRecsession
+      - path: /TestServer/src/customcode/GetDelay.java
+        type: testCustomCode
+  - name: LockStep-Example1.testsuite
+  - name: LockStep-Example1_1686776775127.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1686776775127
+      tags: 
+      testId: A1EE0ADCB3BEE8A0E632B93931363537
+      testName: LockStep-Example1
+    dependencies: 
+      - path: /TestServer/LockStep-Example1.testsuite
+        type: statsSessionTest
+      - path: /TestServer/LockStep-Example1_1686776775127_orch!system.mstats
+        type: statsSessionStore
+      - path: /TestServer/LockStep-Example1_1686776775127_orch!system.rstats
+        type: statsSessionStore
+      - path: /TestServer/LockStep-Example1_1686776775127_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /TestServer/LockStep-Example1_1686776775127_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /TestServer/LockStep-Example1_1686776799328.executiondlr
+        type: statsSessionAsset
+  - name: LockStep-Example1_1686776775127_orch!system.mstats
+  - name: LockStep-Example1_1686776775127_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: LockStep-Example1_1686776775127_perf!localhost.mstats
+  - name: LockStep-Example1_1686776775127_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: LockStep-Example1_1686776799328.executiondlr
+  - name: LockStepSimulation.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE20584052E7B2D780B56236336636
+    dependencies: 
+      - path: /TestServer/.classpath
+        type: testJavaClasspath
+      - path: /TestServer/TestServer(3).recsession
+        type: testRecsession
+      - path: /TestServer/src/customcode/LockStep.java
+        type: testCustomCode
+  - name: MeanStddevSimulation.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE1B710BCBE413F38AB73334383632
+    dependencies: 
+      - path: /TestServer/.classpath
+        type: testJavaClasspath
+      - path: /TestServer/TestServer(3).recsession
+        type: testRecsession
+      - path: /TestServer/src/customcode/MeanStddev.java
+        type: testCustomCode
+  - name: NonHTTPSch.testsuite
+  - name: NonHTTPSch_1688761560962.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1688761560962
+      tags: 
+      testId: A1EE1D0450237600E7BFB16566663533
+      testName: NonHTTPSch
+    dependencies: 
+      - path: /TestServer/NonHTTPSch.testsuite
+        type: statsSessionTest
+      - path: /TestServer/NonHTTPSch_1688761560962_orch!system.mstats
+        type: statsSessionStore
+      - path: /TestServer/NonHTTPSch_1688761560962_orch!system.rstats
+        type: statsSessionStore
+      - path: /TestServer/NonHTTPSch_1688761586752.executiondlr
+        type: statsSessionAsset
+  - name: NonHTTPSch_1688761560962_orch!system.mstats
+  - name: NonHTTPSch_1688761560962_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: NonHTTPSch_1688761586752.executiondlr
+  - name: NonHttp.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: com.ibm.rational.test.lt.feature.lt
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE1D04014BE5D0E7BFB16566663533
+  - name: StartServer.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: com.ibm.rational.test.lt.feature.lt
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EDDD423DD06140F474B56631393731
+    dependencies: 
+      - path: /TestServer/.classpath
+        type: testJavaClasspath
+      - path: /TestServer/src/customcode/StartServer.java
+        type: testCustomCode
+  - name: TestServer(2).recdata
+  - name: TestServer(2).recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /TestServer/TestServer(2).recdata
+        type: recsessionRecdata
+  - name: TestServer(3).recdata
+  - name: TestServer(3).recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /TestServer/TestServer(3).recdata
+        type: recsessionRecdata
+  - name: TestServer.recdata
+  - name: TestServer.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /TestServer/TestServer.recdata
+        type: recsessionRecdata
+  - name: TestServer.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EDDD3FA9D155A0F474B56631393731
+    dependencies: 
+      - path: /TestServer/TestServer(3).recsession
+        type: testRecsession
+  - name: ThroughputDrop-ConstantUsers-ShortDrop-No-Pattern.testsuite
+  - name: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1688579105036
+      tags: 
+      testId: A1EE1B5A954B4A10F38AB73334383632
+      testName: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern
+    dependencies: 
+      - path: /TestServer/ThroughputDrop-ConstantUsers-ShortDrop-No-Pattern.testsuite
+        type: statsSessionTest
+      - path: /TestServer/ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_orch!system.mstats
+        type: statsSessionStore
+      - path: /TestServer/ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_orch!system.rstats
+        type: statsSessionStore
+      - path: /TestServer/ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /TestServer/ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /TestServer/ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579124571.executiondlr
+        type: statsSessionAsset
+  - name: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_orch!system.mstats
+  - name: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_perf!localhost.mstats
+  - name: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579105036_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: ThroughputDrop-ConstantUsers-SortDrop-No-Pattern_1688579124571.executiondlr
+  - name: ThroughputSimulation.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE15E76414D6B7FE46B26333386439
+    dependencies: 
+      - path: /TestServer/.classpath
+        type: testJavaClasspath
+      - path: /TestServer/TestServer(3).recsession
+        type: testRecsession
+      - path: /TestServer/src/customcode/SimpleThroughputDrop.java
+        type: testCustomCode
+  - name: VerifyTestServer.testsuite
+  - name: VerifyTestServer_1681755886628.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1681755886628
+      tags: 
+      testId: A1EDDD421323B280F474B56631393731
+      testName: VerifyTestServer
+    dependencies: 
+      - path: /TestServer/VerifyTestServer.testsuite
+        type: statsSessionTest
+      - path: /TestServer/VerifyTestServer_1681755886628_orch!system.mstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681755886628_orch!system.rstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681755886628_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681755886628_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681755911291.executiondlr
+        type: statsSessionAsset
+  - name: VerifyTestServer_1681755886628_orch!system.mstats
+  - name: VerifyTestServer_1681755886628_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: VerifyTestServer_1681755886628_perf!localhost.mstats
+  - name: VerifyTestServer_1681755886628_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: VerifyTestServer_1681755911291.executiondlr
+  - name: VerifyTestServer_1681756162013.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1681756162013
+      tags: 
+      testId: A1EDDD421323B280F474B56631393731
+      testName: VerifyTestServer
+    dependencies: 
+      - path: /TestServer/VerifyTestServer.testsuite
+        type: statsSessionTest
+      - path: /TestServer/VerifyTestServer_1681756162013_orch!system.mstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681756162013_orch!system.rstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681756162013_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681756162013_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681756176133.executiondlr
+        type: statsSessionAsset
+  - name: VerifyTestServer_1681756162013_orch!system.mstats
+  - name: VerifyTestServer_1681756162013_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: VerifyTestServer_1681756162013_perf!localhost.mstats
+  - name: VerifyTestServer_1681756162013_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: VerifyTestServer_1681756176133.executiondlr
+  - name: VerifyTestServer_1681758206757.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1681758206757
+      tags: 
+      testId: A1EDDD421323B280F474B56631393731
+      testName: VerifyTestServer
+    dependencies: 
+      - path: /TestServer/VerifyTestServer.testsuite
+        type: statsSessionTest
+      - path: /TestServer/VerifyTestServer_1681758206757_orch!system.mstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681758206757_orch!system.rstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681758206757_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681758206757_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /TestServer/VerifyTestServer_1681758252104.executiondlr
+        type: statsSessionAsset
+  - name: VerifyTestServer_1681758206757_orch!system.mstats
+  - name: VerifyTestServer_1681758206757_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: VerifyTestServer_1681758206757_perf!localhost.mstats
+  - name: VerifyTestServer_1681758206757_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: VerifyTestServer_1681758252104.executiondlr
+  - name: lib
+    resources: 
+      - name: generate-stats-webserver-1.0.1-jar-with-dependencies.jar
+  - name: src
+    resources: 
+      - name: customcode
+        resources: 
+          - name: GetDelay.java
+          - name: LockStep.java
+          - name: MeanStddev.java
+          - name: SimpleThroughputDrop.java
+          - name: StartServer.java
+      - name: test
+        resources: 
+          - name: DelaySimulation_Test_A1EE0ADB192D51C2E632B93931363537.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: MeanStddevSimulation_Test_A1EE1B710BCBE413F38AB73334383632.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: NonHTTPSch_Schedule_A1EE1D0450237600E7BFB16566663533.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: NonHttp_Test_A1EE1D04014BE5D0E7BFB16566663533.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE0ADCB3BEE8A0E632B93931363537.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE15ECCFEE4C30FE46B26333386439.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE15EDD71787A0FE46B26333386439.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE1B5A954B4A10F38AB73334383632.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE1B749D50AB50F38AB73334383632.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE1B77EC8AC680F38AB73334383632.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: Schedule_A1EE1B7D8EEA5D50F38AB73334383632.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: StartServer_Test_A1EDDD423DD06140F474B56631393731.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: TestServer_Test_A1EDDD3FA9D155A0F474B56631393731.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: ThroughputSimulation_Test_A1EE15E76414D6B7FE46B26333386439.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: VerifyTestServer_Schedule_A1EDDD421323B280F474B56631393731.java
+            type: com.ibm.rational.test.lt.generatedCode
