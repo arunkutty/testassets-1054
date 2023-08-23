@@ -1,0 +1,39 @@
+name: MyDemoProj
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /MyDemoProj/src
+        type: javaClasspath
+  - name: MySched.testsuite
+    type: com.ibm.rational.test.lt.schedule
+    version: 10.5.3.0
+    properties: 
+      description: 'Stages:
+
+	users=10; duration=2 minutes
+
+	users=20; duration=2 minutes
+
+User Group 1: Group Size 100.0 percent
+
+	Test(s): myTest
+
+'
+      name: MySched
+      type: com.ibm.rational.test.common.schedule.Schedule
+      uid: A1EE41B84A6CDB60D3EEB26562336433
+    dependencies: 
+      - path: /MyDemoProj/myTest.testsuite
+        type: scheduleInvokedTest
+  - name: myTest.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: com.ibm.rational.test.lt.feature.lt
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE41B838156C20D3EEB26562336433
+  - name: src
+    resources: 
