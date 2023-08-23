@@ -13,21 +13,11 @@ resources:
     properties: 
       description: 'Stages:
 
-	users=2; duration=1 minutes
+	users=5; duration=5 minutes
 
-	users=4; duration=1 minutes
+	users=15; duration=5 minutes
 
-	users=6; duration=1 minutes
-
-	users=2; duration=1 minutes
-
-	users=4; duration=1 minutes
-
-	users=6; duration=1 minutes
-
-	users=2; duration=1 minutes
-
-	users=4; duration=1 minutes
+	users=30; duration=5 minutes
 
 User Group 1: Group Size 100.0 percent
 
